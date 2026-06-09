@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Aquí viene el secreto! - Revelación de Sexo</title>
+  <!-- Tailwind CSS para diseño rápido y moderno -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts para tipografías mágicas y tiernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons para iconos hermosos -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti para celebración interactiva -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #FAF6F0;
+    }
+    .font-title-elegant {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-accent {
+      font-family: 'Fredoka', sans-serif;
+    }
+    /* Efecto fondo de acuarela suave y cálido */
+    .watercolor-bg {
+      background: radial-gradient(circle at 10% 20%, rgba(255, 236, 179, 0.45) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 80%, rgba(255, 204, 128, 0.45) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 50%, rgba(255, 253, 240, 1) 0%, rgba(250, 246, 240, 1) 100%);
+    }
+    /* Animación de balanceo y flotado super tierno */
+    @keyframes float-soft {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
+    }
+    @keyframes float-reverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(-1.5deg); }
+    }
+    .floating-cute-1 {
+      animation: float-soft 5s ease-in-out infinite;
+    }
+    .floating-cute-2 {
+      animation: float-reverse 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="watercolor-bg min-h-screen flex flex-col items-center justify-between overflow-x-hidden pb-12 selection:bg-amber-200">
+
+  <!-- BOTÓN DE PANEL DE CONTROL (Oculto/Fijo arriba para organizar las respuestas) -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="toggleAdminPanel()" class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 flex items-center justify-center gap-2 text-xs font-semibold">
+      <i data-lucide="settings"></i>
+      <span class="hidden md:inline">Ver Respuestas</span>
+    </button>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL DE LA INVITACIÓN -->
+  <main class="w-full max-w-lg mx-auto px-4 pt-16 pb-6 relative">
+    
+    <!-- ==================== MARCO DECORATIVO DE 6 SOLECITOS Y DETALLES (COMO TU TARJETA) ==================== -->
+    
+    <!-- Guirnalda de Estrellas Superior -->
+    <div class="absolute top-6 left-0 right-0 h-12 overflow-hidden pointer-events-none opacity-80 z-10">
+      <svg class="w-full h-full" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 10 Q100 30 200 10 T390 10" stroke="#FFE082" stroke-width="2" stroke-dasharray="4 4"/>
+        <!-- Pequeñas estrellitas colgantes -->
+        <polygon points="50,18 52,22 56,22 53,25 54,29 50,27 46,29 47,25 44,22 48,22" fill="#FFE082"/>
+        <polygon points="120,24 122,28 126,28 123,31 124,35 120,33 116,35 117,31 114,28 118,28" fill="#FFB74D"/>
+        <polygon points="280,24 282,28 286,28 283,31 284,35 280,33 276,35 277,31 274,28 278,28" fill="#FFB74D"/>
+        <polygon points="350,18 352,22 356,22 353,25 354,29 350,27 346,29 347,25 344,22 348,22" fill="#FFE082"/>
+      </svg>
+    </div>
+
+    <!-- Guirnalda de Estrellas Inferior -->
+    <div class="absolute bottom-6 left-0 right-0 h-12 overflow-hidden pointer-events-none opacity-80 z-10">
+      <svg class="w-full h-full" viewBox="0 0 400 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20 Q100 5 200 20 T390 20" stroke="#FFE082" stroke-width="2" stroke-dasharray="4 4"/>
+        <polygon points="60,10 62,14 66,14 63,17 64,21 60,19 56,21 57,17 54,14 58,14" fill="#FFE082"/>
+        <polygon points="140,15 142,19 146,19 143,22 144,26 140,24 136,26 137,22 134,19 138,19" fill="#FFB74D"/>
+        <polygon points="260,15 262,19 266,19 263,22 264,26 260,24 256,26 257,22 254,19 258,19" fill="#FFB74D"/>
+        <polygon points="340,10 342,14 346,14 343,17 344,21 340,19 336,21 337,17 334,14 338,14" fill="#FFE082"/>
+      </svg>
+    </div>
+
+    <!-- Moño Superior Centrado -->
+    <div class="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 z-20 opacity-90">
+      <svg viewBox="0 0 100 50" class="w-full h-auto">
+        <!-- Lazo acuarela beige/crema -->
+        <path d="M10,25 C10,10 35,5 45,20 C48,25 52,25 55,20 C65,5 90,10 90,25 C90,40 75,45 50,30 C25,45 10,40 10,25 Z" fill="#F5E6D3" stroke="#E3C9AE" stroke-width="1.5"/>
+        <path d="M48,28 L32,48 L44,45 Z" fill="#EADBC8" stroke="#D2B48C" stroke-width="1"/>
+        <path d="M52,28 L68,48 L56,45 Z" fill="#EADBC8" stroke="#D2B48C" stroke-width="1"/>
+        <!-- Nudo del lazo -->
+        <rect x="44" y="20" width="12" height="12" rx="4" fill="#E3C9AE" stroke="#D2B48C" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Moño Inferior Centrado -->
+    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-24 z-20 opacity-90">
+      <svg viewBox="0 0 100 50" class="w-full h-auto">
+        <path d="M10,25 C10,10 35,5 45,20 C48,25 52,25 55,20 C65,5 90,10 90,25 C90,40 75,45 50,30 C25,45 10,40 10,25 Z" fill="#F5E6D3" stroke="#E3C9AE" stroke-width="1.5"/>
+        <path d="M48,28 L32,48 L44,45 Z" fill="#EADBC8" stroke="#D2B48C" stroke-width="1"/>
+        <path d="M52,28 L68,48 L56,45 Z" fill="#EADBC8" stroke="#D2B48C" stroke-width="1"/>
+        <rect x="44" y="20" width="12" height="12" rx="4" fill="#E3C9AE" stroke="#D2B48C" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- DEFINICIÓN DEL SOL SIN ROSTRO ACUARELA SÚPER CUTE -->
+    <svg class="hidden">
+      <defs>
+        <radialGradient id="cuteSunGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF59D" />
+          <stop offset="70%" stop-color="#FFD54F" />
+          <stop offset="100%" stop-color="#FFB74D" />
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <!-- [Solecito 1] Esquina Superior Izquierda (Grande, con nubes) -->
+    <div class="absolute -top-4 -left-4 w-28 h-28 z-20 floating-cute-1">
+      <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+        <!-- Rayos del Sol -->
+        <g stroke="#FFA726" stroke-width="5" stroke-linecap="round">
+          <line x1="60" y1="15" x2="60" y2="28" /><line x1="60" y1="92" x2="60" y2="105" />
+          <line x1="15" y1="60" x2="28" y2="60" /><line x1="92" y1="60" x2="105" y2="60" />
+          <line x1="28" y1="28" x2="38" y2="38" /><line x1="82" y1="82" x2="92" y2="92" />
+          <line x1="92" y1="28" x2="82" y2="38" /><line x1="38" y1="82" x2="28" y2="92" />
+        </g>
+        <!-- Círculo del Sol -->
+        <circle cx="60" cy="60" r="28" fill="url(#cuteSunGrad)" />
+        <!-- Nubes tiernas de acuarela alrededor -->
+        <path d="M15,80 A15,15 0 0,1 45,65 A20,20 0 0,1 80,70 A15,15 0 0,1 95,85 L15,85 Z" fill="#FFFFFF" opacity="0.9" />
+        <path d="M5,90 A10,10 0 0,1 25,80 A15,15 0 0,1 55,85 L5,90 Z" fill="#EADBC8" opacity="0.6" />
+      </svg>
+    </div>
+
+    <!-- [Solecito 2] Esquina Superior Derecha (Grande, con nubes) -->
+    <div class="absolute -top-4 -right-4 w-28 h-28 z-20 floating-cute-2">
+      <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+        <g stroke="#FFA726" stroke-width="5" stroke-linecap="round">
+          <line x1="60" y1="15" x2="60" y2="28" /><line x1="60" y1="92" x2="60" y2="105" />
+          <line x1="15" y1="60" x2="28" y2="60" /><line x1="92" y1="60" x2="105" y2="60" />
+          <line x1="28" y1="28" x2="38" y2="38" /><line x1="82" y1="82" x2="92" y2="92" />
+          <line x1="92" y1="28" x2="82" y2="38" /><line x1="38" y1="82" x2="28" y2="92" />
+        </g>
+        <circle cx="60" cy="60" r="28" fill="url(#cuteSunGrad)" />
+        <path d="M25,80 A15,15 0 0,1 55,65 A20,20 0 0,1 90,70 L25,80 Z" fill="#FFFFFF" opacity="0.9" />
+        <path d="M45,85 A12,12 0 0,1 75,75 A15,15 0 0,1 105,80 L45,85 Z" fill="#EADBC8" opacity="0.6" />
+      </svg>
+    </div>
+
+    <!-- [Solecito 3] Lateral Izquierdo (Medio, flotando dulcemente) -->
+    <div class="absolute top-[32%] -left-6 w-16 h-16 z-20 floating-cute-2">
+      <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm">
+        <g stroke="#FFA726" stroke-width="4" stroke-linecap="round">
+          <line x1="50" y1="12" x2="50" y2="22" /><line x1="50" y1="78" x2="50" y2="88" />
+          <line x1="12" y1="50" x2="22" y2="50" /><line x1="78" y1="50" x2="88" y2="50" />
+        </g>
+        <circle cx="50" cy="50" r="22" fill="url(#cuteSunGrad)" />
+        <path d="M10,70 A10,10 0 0,1 30,60 A12,12 0 0,1 55,65 L10,70 Z" fill="#FFFFFF" opacity="0.9" />
+      </svg>
+    </div>
+
+    <!-- [Solecito 4] Lateral Derecho (Medio, flotando dulcemente) -->
+    <div class="absolute top-[52%] -right-6 w-16 h-16 z-20 floating-cute-1">
+      <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm">
+        <g stroke="#FFA726" stroke-width="4" stroke-linecap="round">
+          <line x1="50" y1="12" x2="50" y2="22" /><line x1="50" y1="78" x2="50" y2="88" />
+          <line x1="12" y1="50" x2="22" y2="50" /><line x1="78" y1="50" x2="88" y2="50" />
+        </g>
+        <circle cx="50" cy="50" r="22" fill="url(#cuteSunGrad)" />
+        <path d="M30,70 A10,10 0 0,1 50,60 A12,12 0 0,1 75,65 L30,70 Z" fill="#FFFFFF" opacity="0.9" />
+      </svg>
+    </div>
+
+    <!-- [Solecito 5] Esquina Inferior Izquierda (Grande, con nubes) -->
+    <div class="absolute -bottom-4 -left-4 w-28 h-28 z-20 floating-cute-2">
+      <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+        <g stroke="#FFA726" stroke-width="5" stroke-linecap="round">
+          <line x1="60" y1="15" x2="60" y2="28" /><line x1="60" y1="92" x2="60" y2="105" />
+          <line x1="15" y1="60" x2="28" y2="60" /><line x1="92" y1="60" x2="105" y2="60" />
+          <line x1="28" y1="28" x2="38" y2="38" /><line x1="82" y1="82" x2="92" y2="92" />
+          <line x1="92" y1="28" x2="82" y2="38" /><line x1="38" y1="82" x2="28" y2="92" />
+        </g>
+        <circle cx="60" cy="60" r="28" fill="url(#cuteSunGrad)" />
+        <path d="M15,80 A15,15 0 0,1 45,65 A20,20 0 0,1 80,70 L15,80 Z" fill="#FFFFFF" opacity="0.9" />
+        <path d="M5,90 A10,10 0 0,1 25,80 A15,15 0 0,1 55,85 L5,90 Z" fill="#EADBC8" opacity="0.6" />
+      </svg>
+    </div>
+
+    <!-- [Solecito 6] Esquina Inferior Derecha (Grande, con nubes) -->
+    <div class="absolute -bottom-4 -right-4 w-28 h-28 z-20 floating-cute-1">
+      <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+        <g stroke="#FFA726" stroke-width="5" stroke-linecap="round">
+          <line x1="60" y1="15" x2="60" y2="28" /><line x1="60" y1="92" x2="60" y2="105" />
+          <line x1="15" y1="60" x2="28" y2="60" /><line x1="92" y1="60" x2="105" y2="60" />
+          <line x1="28" y1="28" x2="38" y2="38" /><line x1="82" y1="82" x2="92" y2="92" />
+          <line x1="92" y1="28" x2="82" y2="38" /><line x1="38" y1="82" x2="28" y2="92" />
+        </g>
+        <circle cx="60" cy="60" r="28" fill="url(#cuteSunGrad)" />
+        <path d="M25,80 A15,15 0 0,1 55,65 A20,20 0 0,1 90,70 L25,80 Z" fill="#FFFFFF" opacity="0.9" />
+        <path d="M45,85 A12,12 0 0,1 75,75 A15,15 0 0,1 105,80 L45,85 Z" fill="#EADBC8" opacity="0.6" />
+      </svg>
+    </div>
+
+    <!-- TARJETA VISUAL CENTRAL -->
+    <div class="bg-white/90 backdrop-blur-md rounded-[2.5rem] shadow-2xl border-4 border-amber-100 p-6 md:p-8 text-center relative overflow-hidden">
+      
+      <!-- CONTENEDOR DE CABECERA CON TEXTO CURVADO REAL (SÚPER PRO) -->
+      <div class="w-full h-20 flex justify-center items-center -mt-2">
+        <svg viewBox="0 0 300 80" class="w-64 h-auto">
+          <path id="curve" d="M 30,65 Q 150,20 270,65" fill="none" />
+          <text class="font-accent text-sm font-bold" fill="#8D6E63" letter-spacing="4">
+            <textPath href="#curve" startOffset="50%" text-anchor="middle">
+              AQUÍ VIENE EL
+            </textPath>
+          </text>
+        </svg>
+      </div>
+      
+      <!-- SECRETO (Más grande y vibrante como la imagen) -->
+      <h1 class="text-6xl md:text-7xl font-accent font-extrabold text-[#FBC02D] tracking-tight -mt-4 drop-shadow-sm">
+        SECRETO
+      </h1>
+      
+      <!-- REVELACIÓN DE SEXO (Preciosa tipografía cursiva marrón) -->
+      <h2 class="text-4xl md:text-5xl font-title-elegant italic font-semibold text-[#8D6E63] mt-2 drop-shadow-xs">
+        Revelación de Sexo
+      </h2>
+
+      <!-- Divisor tierno -->
+      <div class="flex items-center justify-center gap-2 my-4">
+        <div class="h-[1.5px] w-12 bg-gradient-to-r from-transparent to-amber-300"></div>
+        <i data-lucide="star" class="text-amber-400 fill-amber-400 w-4 h-4"></i>
+        <div class="h-[1.5px] w-12 bg-gradient-to-l from-transparent to-amber-300"></div>
+      </div>
+
+      <p class="text-[#795548] italic text-base md:text-lg mb-6 font-medium">
+        Acompáñanos a descubrir el misterio
+      </p>
+
+      <!-- FECHA Y HORA DESTACADA (Super Vibrante y Nítido) -->
+      <div class="bg-gradient-to-br from-amber-50/80 to-orange-50/50 rounded-2xl p-5 border border-amber-200/60 shadow-inner mb-6">
+        <div class="flex justify-center items-center gap-1.5 text-orange-600 mb-1.5">
+          <i data-lucide="heart" class="fill-orange-500 text-orange-500 w-5 h-5"></i>
+          <span class="text-xl font-bold font-accent tracking-wider">EL 20 DE JUNIO, 2026</span>
+          <i data-lucide="heart" class="fill-orange-500 text-orange-500 w-5 h-5"></i>
+        </div>
+        <p class="text-amber-900 text-lg font-bold flex items-center justify-center gap-2">
+          <i data-lucide="clock" class="w-5 h-5 text-[#FF9800]"></i>
+          A LAS 3:30 DE LA TARDE
+        </p>
+      </div>
+
+      <!-- CUENTA REGRESIVA INTERACTIVA -->
+      <div class="mb-6">
+        <p class="text-[11px] text-[#8D6E63] uppercase font-bold tracking-widest mb-2">¡Estamos a solo!</p>
+        <div class="grid grid-cols-4 gap-2 max-w-sm mx-auto">
+          <div class="bg-amber-50/60 border border-amber-100/80 rounded-xl p-2.5 shadow-xs">
+            <span id="countdown-days" class="block text-2xl font-bold text-[#E65100] font-accent">00</span>
+            <span class="text-[9px] text-[#8D6E63] uppercase font-bold">Días</span>
+          </div>
+          <div class="bg-amber-50/60 border border-amber-100/80 rounded-xl p-2.5 shadow-xs">
+            <span id="countdown-hours" class="block text-2xl font-bold text-[#E65100] font-accent">00</span>
+            <span class="text-[9px] text-[#8D6E63] uppercase font-bold">Horas</span>
+          </div>
+          <div class="bg-amber-50/60 border border-amber-100/80 rounded-xl p-2.5 shadow-xs">
+            <span id="countdown-minutes" class="block text-2xl font-bold text-[#E65100] font-accent">00</span>
+            <span class="text-[9px] text-[#8D6E63] uppercase font-bold">Min</span>
+          </div>
+          <div class="bg-amber-50/60 border border-amber-100/80 rounded-xl p-2.5 shadow-xs">
+            <span id="countdown-seconds" class="block text-2xl font-bold text-[#E65100] font-accent">00</span>
+            <span class="text-[9px] text-[#8D6E63] uppercase font-bold">Seg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UBICACIÓN Y VESTIMENTA -->
+      <div class="space-y-4 text-left border-t border-b border-amber-100/80 py-4 mb-6">
+        <div class="flex items-start gap-3">
+          <div class="bg-amber-100/80 text-amber-800 p-2 rounded-xl mt-0.5 shadow-xs">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-[#5D4037] text-sm">UBICACIÓN</h4>
+            <p class="text-amber-900 text-sm font-semibold">La Sosa</p>
+            <button onclick="openMap()" class="text-xs text-orange-600 font-bold flex items-center gap-1 mt-1 hover:underline">
+              Ver mapa del evento <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="bg-orange-100/80 text-orange-800 p-2 rounded-xl mt-0.5 shadow-xs">
+            <i data-lucide="shirt" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-[#5D4037] text-sm font-accent">CÓDIGO DE VESTIMENTA</h4>
+            <p class="text-amber-900 text-sm font-semibold">Colores Pastel (¡Ven de tu favorito!)</p>
+            <div class="flex gap-2 mt-2">
+              <span class="w-5 h-5 rounded-full bg-blue-100 border border-blue-200 block" title="Azul Pastel"></span>
+              <span class="w-5 h-5 rounded-full bg-pink-100 border border-pink-200 block" title="Rosa Pastel"></span>
+              <span class="w-5 h-5 rounded-full bg-yellow-100 border border-yellow-200 block" title="Amarillo Pastel"></span>
+              <span class="w-5 h-5 rounded-full bg-purple-100 border border-purple-200 block" title="Lila Pastel"></span>
+              <span class="w-5 h-5 rounded-full bg-green-100 border border-green-200 block" title="Verde Pastel"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPCIONES DE REGALO / DETALLES -->
+      <div class="mb-6">
+        <h4 class="font-bold text-[#5D4037] text-sm font-accent mb-3 uppercase tracking-wider">Opciones de Regalo o Detalles</h4>
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="showGiftModal('niño')" class="bg-blue-50/50 hover:bg-blue-50 border-2 border-blue-200 hover:border-blue-300 rounded-2xl p-3 text-center transition-all transform hover:scale-[1.02] shadow-xs">
+            <span class="text-2xl">👦</span>
+            <span class="block font-bold text-blue-800 text-xs md:text-sm mt-1">Si crees que es Niño</span>
+            <span class="bg-blue-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mt-1">Lleva: Pañales</span>
+          </button>
+          
+          <button onclick="showGiftModal('niña')" class="bg-pink-50/50 hover:bg-pink-50 border-2 border-pink-200 hover:border-pink-300 rounded-2xl p-3 text-center transition-all transform hover:scale-[1.02] shadow-xs">
+            <span class="text-2xl">👧</span>
+            <span class="block font-bold text-pink-800 text-xs md:text-sm mt-1">Si crees que es Niña</span>
+            <span class="bg-pink-500 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-block mt-1">Lleva: Toallas Húmedas</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BOTÓN LLAMATIVO PARA HACER RSVP -->
+      <button onclick="scrollToForm()" class="w-full bg-gradient-to-r from-[#FBC02D] via-[#FF9800] to-[#FBC02D] hover:from-[#FBC02D] hover:to-[#F57C00] text-white font-accent font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform active:scale-95 flex items-center justify-center gap-2 text-lg">
+        <i data-lucide="check-square" class="w-6 h-6"></i>
+        CONFIRMAR MI ASISTENCIA
+      </button>
+
+    </div>
+
+    <!-- SECCIÓN INTERACTIVA DE FORMULARIO -->
+    <div id="rsvp-section" class="bg-white/95 rounded-[2.5rem] shadow-2xl border-4 border-orange-100 p-6 md:p-8 text-center mt-8 relative">
+      <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-accent font-bold px-6 py-1 rounded-full text-xs md:text-sm shadow-md tracking-wider">
+        ¿ACOMPAÑARÁS A LOS PADRES?
+      </div>
+
+      <h3 class="text-2xl font-accent font-bold text-[#5D4037] mt-3 mb-4">Confirma tu Asistencia</h3>
+
+      <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs md:text-sm font-bold text-[#5D4037] mb-1">Nombre Completo:</label>
+          <input type="text" id="guest-name" required placeholder="Escribe tu nombre y apellido" class="w-full p-3.5 rounded-xl border border-amber-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all text-amber-950 placeholder:text-amber-900/30 font-semibold">
+        </div>
+
+        <div>
+          <label class="block text-xs md:text-sm font-bold text-[#5D4037] mb-2">¿Confirmas tu presencia?</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="border-2 border-amber-200 rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-all hover:bg-amber-50/50" id="label-yes">
+              <input type="radio" name="attendance" value="si" required onclick="toggleAttendance(true)" class="accent-orange-500 w-4 h-4">
+              <span class="font-bold text-[#5D4037] text-xs md:text-sm">¡Sí estaré! 🎉</span>
+            </label>
+            <label class="border-2 border-amber-200 rounded-xl p-3 flex items-center justify-center gap-2 cursor-pointer transition-all hover:bg-amber-50/50" id="label-no">
+              <input type="radio" name="attendance" value="no" onclick="toggleAttendance(false)" class="accent-orange-500 w-4 h-4">
+              <span class="font-bold text-[#5D4037] text-xs md:text-sm">No podré ir 😢</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="extra-fields" class="space-y-4">
+          <div>
+            <label class="block text-xs md:text-sm font-bold text-[#5D4037] mb-1">¿Cuántas personas asistirán (incluyéndote)?</label>
+            <select id="guest-count" class="w-full p-3.5 rounded-xl border border-amber-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all font-semibold text-amber-900">
+              <option value="1">1 Persona (Solo yo)</option>
+              <option value="2">2 Personas</option>
+              <option value="3">3 Personas</option>
+              <option value="4">4 Personas o más</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs md:text-sm font-bold text-[#5D4037] mb-1">¿Qué detalle/regalo llevarás para el bebé?</label>
+            <select id="guest-gift" class="w-full p-3.5 rounded-xl border border-amber-200 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition-all font-semibold text-amber-900">
+              <option value="Pañales (Niño)">Pañales (¡Yo creo que es niño! 👦)</option>
+              <option value="Toallas Húmedas (Niña)">Toallas Húmedas (¡Yo creo que es niña! 👧)</option>
+              <option value="No decidido aún">Prefiero decidirlo ese mismo día</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-accent font-bold py-3.5 px-6 rounded-2xl shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-base">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          ENVIAR MI CONFIRMACIÓN
+        </button>
+      </form>
+
+      <!-- Mensaje de éxito interactivo con animación -->
+      <div id="success-message" class="hidden py-8 px-4 text-center">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="sparkles" class="w-10 h-10 text-green-600 fill-green-200"></i>
+        </div>
+        <h4 class="text-2xl font-accent font-bold text-green-700">¡Confirmación Enviada!</h4>
+        <p class="text-[#5D4037] text-sm mt-2 max-w-xs mx-auto">Tu respuesta ha sido registrada exitosamente. ¡Muchas gracias por compartir esta alegría con nosotros!</p>
+        <button onclick="resetForm()" class="mt-6 text-sm text-orange-600 font-semibold hover:underline">Cambiar mi respuesta anterior</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PANEL DE ADMINISTRACIÓN / LISTADO DE INVITADOS (Oculto) -->
+  <div id="admin-panel" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+      <button onclick="toggleAdminPanel()" class="absolute top-4 right-4 text-amber-950 hover:text-orange-600 p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <h3 class="text-2xl font-accent font-bold text-amber-950">Panel de Respuestas</h3>
+        <p class="text-amber-800 text-xs">Aquí puedes ver en tiempo real a tus invitados confirmados</p>
+      </div>
+
+      <!-- Resumen rápido en tarjetas -->
+      <div class="grid grid-cols-3 gap-3 mb-6">
+        <div class="bg-amber-50 p-3 rounded-xl border border-amber-100 text-center">
+          <span class="block text-2xl font-bold text-amber-700 font-accent" id="stat-total-guests">0</span>
+          <span class="text-[10px] text-amber-800 uppercase font-bold">Asistentes</span>
+        </div>
+        <div class="bg-blue-50 p-3 rounded-xl border border-blue-100 text-center">
+          <span class="block text-2xl font-bold text-blue-700 font-accent" id="stat-total-diapers">0</span>
+          <span class="text-[10px] text-blue-800 uppercase font-bold">Llevan Pañales</span>
+        </div>
+        <div class="bg-pink-50 p-3 rounded-xl border border-pink-100 text-center">
+          <span class="block text-2xl font-bold text-pink-700 font-accent" id="stat-total-wipes">0</span>
+          <span class="text-[10px] text-pink-800 uppercase font-bold">Llevan Toallas</span>
+        </div>
+      </div>
+
+      <!-- Tabla / Lista de invitados -->
+      <div class="border border-amber-100 rounded-2xl overflow-hidden mb-6">
+        <table class="w-full text-left text-sm text-amber-950">
+          <thead class="bg-amber-50 text-xs text-amber-900 uppercase">
+            <tr>
+              <th class="px-4 py-3">Nombre</th>
+              <th class="px-4 py-3">Asistencia</th>
+              <th class="px-4 py-3">Personas</th>
+              <th class="px-4 py-3">Detalle/Regalo</th>
+            </tr>
+          </thead>
+          <tbody id="admin-guest-list" class="divide-y divide-amber-50">
+            <!-- Cargado dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex justify-between gap-4">
+        <button onclick="clearData()" class="px-4 py-2 border border-red-200 hover:border-red-300 text-red-600 rounded-xl text-xs font-bold transition-all">
+          Limpiar toda la lista
+        </button>
+        <button onclick="toggleAdminPanel()" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md">
+          Cerrar Vista
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE DETALLES DE REGALO -->
+  <div id="gift-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-center">
+      <button onclick="closeGiftModal()" class="absolute top-4 right-4 text-amber-950 hover:text-orange-600 p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <span id="modal-gift-icon" class="text-5xl block mb-2">👦</span>
+      <h3 id="modal-gift-title" class="text-2xl font-accent font-bold text-amber-950">Detalles de Regalo</h3>
+      <p id="modal-gift-desc" class="text-amber-800 text-sm mt-2 mb-6">Información útil sobre las preferencias de los padres.</p>
+
+      <div class="bg-amber-50 rounded-2xl p-4 border border-amber-100 text-left space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <i data-lucide="check" class="text-green-600 w-5 h-5 mt-0.5"></i>
+          <p id="modal-gift-detail-1" class="text-amber-900 text-xs md:text-sm font-semibold">Tallas recomendadas: Etapa 1, 2 o 3.</p>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <i data-lucide="check" class="text-green-600 w-5 h-5 mt-0.5"></i>
+          <p id="modal-gift-detail-2" class="text-amber-900 text-xs md:text-sm font-semibold">Marcas preferidas: Pampers, Huggies o Winny.</p>
+        </div>
+      </div>
+
+      <button onclick="closeGiftModal()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-accent font-bold py-3 px-6 rounded-2xl shadow-md transition-all">
+        ¡Entendido! Gracias
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DE MAPA SIMULADO -->
+  <div id="map-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-center">
+      <button onclick="closeMap()" class="absolute top-4 right-4 text-amber-950 hover:text-orange-600 p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2">
+        <i data-lucide="map" class="text-orange-600 w-8 h-8"></i>
+      </div>
+      <h3 class="text-xl font-accent font-bold text-amber-950">Cómo llegar a La Sosa</h3>
+      <p class="text-amber-800 text-xs mt-1 mb-4">Ubicación del evento de Revelación de Sexo</p>
+
+      <div class="bg-amber-50 rounded-2xl h-48 border-2 border-dashed border-amber-200 relative overflow-hidden flex items-center justify-center mb-6">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-amber-100"></div>
+        <div class="z-10 text-center p-4">
+          <i data-lucide="map-pin" class="w-10 h-10 text-orange-600 fill-orange-100 mx-auto animate-bounce mb-2"></i>
+          <p class="font-bold text-amber-950 text-sm">Salón de Eventos "La Sosa"</p>
+          <p class="text-xs text-amber-800">Sector La Sosa, Dirección Principal</p>
+        </div>
+      </div>
+
+      <a href="https://maps.google.com" target="_blank" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-accent font-bold py-3 px-6 rounded-2xl shadow-md transition-all block text-sm">
+        Abrir con Google Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center mt-12 w-full px-4 text-xs text-[#8D6E63]/60 font-semibold">
+    <p>Invitación interactiva y digital para Revelación de Sexo • Junio 2026</p>
+  </footer>
+
+  <script>
+    // Inicializar los hermosos iconos de Lucide
+    lucide.createIcons();
+
+    // Configuración exacta del temporizador (20 de Junio de 2026 a las 3:30 PM)
+    const targetDate = new Date("June 20, 2026 15:30:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference < 0) {
+        document.getElementById("countdown-days").innerText = "00";
+        document.getElementById("countdown-hours").innerText = "00";
+        document.getElementById("countdown-minutes").innerText = "00";
+        document.getElementById("countdown-seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown-days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("countdown-hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("countdown-minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("countdown-seconds").innerText = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Desplazamiento suave al Formulario
+    function scrollToForm() {
+      document.getElementById("rsvp-section").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Toggle para confirmar o cancelar presencia
+    function toggleAttendance(isAttending) {
+      const extraFields = document.getElementById("extra-fields");
+      if (isAttending) {
+        extraFields.classList.remove("hidden");
+        document.getElementById("label-yes").classList.add("border-orange-500", "bg-orange-50/50");
+        document.getElementById("label-no").classList.remove("border-orange-500", "bg-orange-50/50");
+      } else {
+        extraFields.classList.add("hidden");
+        document.getElementById("label-no").classList.add("border-orange-500", "bg-orange-50/50");
+        document.getElementById("label-yes").classList.remove("border-orange-500", "bg-orange-50/50");
+      }
+    }
+
+    // Guardado de respuestas de invitados usando localStorage
+    function submitRSVP(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById("guest-name").value.trim();
+      const attendance = document.querySelector('input[name="attendance"]:checked').value;
+      const count = attendance === 'si' ? parseInt(document.getElementById("guest-count").value) : 0;
+      const gift = attendance === 'si' ? document.getElementById("guest-gift").value : "Ninguno";
+
+      if (!name) return;
+
+      const guestsList = JSON.parse(localStorage.getItem("gender_reveal_guests") || "[]");
+      
+      guestsList.push({ name, attendance, count, gift });
+      localStorage.setItem("gender_reveal_guests", JSON.stringify(guestsList));
+
+      // ¡Efecto de confeti interactivo en tonos amarillos, dorados y blancos!
+      if (attendance === 'si') {
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ['#FFF59D', '#FFD54F', '#FFB74D', '#FFFFFF']
+        });
+      }
+
+      document.getElementById("rsvpForm").classList.add("hidden");
+      document.getElementById("success-message").classList.remove("hidden");
+
+      loadAdminData();
+    }
+
+    // Reset del formulario para permitir más respuestas si se desea
+    function resetForm() {
+      document.getElementById("rsvpForm").reset();
+      document.getElementById("rsvpForm").classList.remove("hidden");
+      document.getElementById("success-message").classList.add("hidden");
+      document.getElementById("extra-fields").classList.remove("hidden");
+      document.getElementById("label-yes").classList.remove("border-orange-500", "bg-orange-50/50");
+      document.getElementById("label-no").classList.remove("border-orange-500", "bg-orange-50/50");
+    }
+
+    // Modales de Regalos
+    function showGiftModal(gender) {
+      const modal = document.getElementById("gift-modal");
+      const icon = document.getElementById("modal-gift-icon");
+      const title = document.getElementById("modal-gift-title");
+      const desc = document.getElementById("modal-gift-desc");
+      const detail1 = document.getElementById("modal-gift-detail-1");
+      const detail2 = document.getElementById("modal-gift-detail-2");
+
+      if (gender === 'niño') {
+        icon.innerText = "👦";
+        title.innerText = "Detalle: Si crees que es Niño";
+        desc.innerText = "¡La preferencia de los padres son los Pañales!";
+        detail1.innerText = "Tallas recomendadas: Etapas 1, 2 y 3 (¡Para que le duren más!).";
+        detail2.innerText = "Marcas más sugeridas: Huggies, Pampers o Winny (sin alcohol ni fragancias).";
+      } else {
+        icon.innerText = "👧";
+        title.innerText = "Detalle: Si crees que es Niña";
+        desc.innerText = "¡La preferencia de los padres son las Toallas Húmedas!";
+        detail1.innerText = "Se recomiendan paquetes grandes para pieles ultra sensibles.";
+        detail2.innerText = "Marcas sugeridas: Huggies Cuidado Puro, Pampers Sensitive o Pequeñín.";
+      }
+
+      modal.classList.remove("hidden");
+    }
+
+    function closeGiftModal() {
+      document.getElementById("gift-modal").classList.add("hidden");
+    }
+
+    // Abrir/Cerrar Mapa
+    function openMap() {
+      document.getElementById("map-modal").classList.remove("hidden");
+    }
+
+    function closeMap() {
+      document.getElementById("map-modal").classList.add("hidden");
+    }
+
+    // Panel de Control
+    function toggleAdminPanel() {
+      const panel = document.getElementById("admin-panel");
+      panel.classList.toggle("hidden");
+      if (!panel.classList.contains("hidden")) {
+        loadAdminData();
+      }
+    }
+
+    function loadAdminData() {
+      const guestsList = JSON.parse(localStorage.getItem("gender_reveal_guests") || "[]");
+      const listElement = document.getElementById("admin-guest-list");
+      listElement.innerHTML = "";
+
+      let totalGuests = 0;
+      let totalDiapers = 0;
+      let totalWipes = 0;
+
+      if (guestsList.length === 0) {
+        listElement.innerHTML = `
+          <tr>
+            <td colspan="4" class="text-center py-6 text-amber-800/50 italic">Nadie ha confirmado todavía.</td>
+          </tr>
+        `;
+      } else {
+        guestsList.forEach((guest) => {
+          const isAttending = guest.attendance === "si";
+          if (isAttending) {
+            totalGuests += guest.count;
+            if (guest.gift.includes("Pañales")) totalDiapers += 1;
+            if (guest.gift.includes("Toallas")) totalWipes += 1;
+          }
+
+          const tr = document.createElement("tr");
+          tr.className = "hover:bg-amber-50/50 transition-colors";
+          tr.innerHTML = `
+            <td class="px-4 py-3 font-semibold text-amber-950">${guest.name}</td>
+            <td class="px-4 py-3">
+              <span class="px-2 py-0.5 rounded-full text-xs font-bold ${isAttending ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}">
+                ${isAttending ? 'Asistirá' : 'No asistirá'}
+              </span>
+            </td>
+            <td class="px-4 py-3 text-center font-bold">${isAttending ? guest.count : '-'}</td>
+            <td class="px-4 py-3 text-xs text-amber-900">${guest.gift}</td>
+          `;
+          listElement.appendChild(tr);
+        });
+      }
+
+      document.getElementById("stat-total-guests").innerText = totalGuests;
+      document.getElementById("stat-total-diapers").innerText = totalDiapers;
+      document.getElementById("stat-total-wipes").innerText = totalWipes;
+    }
+
+    function clearData() {
+      if (confirm("¿Estás segura de querer eliminar toda la lista de invitados? Esta acción no se puede deshacer.")) {
+        localStorage.removeItem("gender_reveal_guests");
+        loadAdminData();
+      }
+    }
+  </script>
+</body>
+</html>
