@@ -1,48 +1,303 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Aquí viene el secreto! - Revelación de Sexo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡El Secreto de Rayito de Luz!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: #FAF6F0;
-    }
-    .font-elegant {
-      font-family: 'Playfair Display', serif;
-    }
-    .font-accent {
-      font-family: 'Fredoka', sans-serif;
-    }
-    /* Fondo con destellos suaves estilo acuarela cálida */
-    .watercolor-bg {
-      background: radial-gradient(circle at 15% 15%, rgba(255, 236, 179, 0.4) 0%, transparent 50%),
-                  radial-gradient(circle at 85% 85%, rgba(255, 204, 128, 0.35) 0%, transparent 50%),
-                  radial-gradient(circle at 50% 50%, #FFFEF9 0%, #FAF6F0 100%);
-    }
-    /* Animaciones suaves de balanceo para los solecitos */
-    @keyframes float-slow-1 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-6px) rotate(2deg); }
-    }
-    @keyframes float-slow-2 {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-4px) rotate(-2deg); }
-    }
-    .anim-sun-1 { animation: float-slow-1 5s ease-in-out infinite; }
-    .anim-sun-2 { animation: float-slow-2 6s ease-in-out infinite; }
-  </style>
+    <style>
+        :root {
+            --beige: #FFF9F0;
+            --yellow-light: #FFF59D;
+            --yellow: #FFD54F;
+            --orange: #FF9800;
+            --text-brown: #5D4037;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--beige);
+            color: var(--text-brown);
+            overflow-x: hidden;
+        }
+
+        .font-accent { font-family: 'Fredoka', sans-serif; }
+        .font-elegant { font-family: 'Playfair Display', serif; }
+
+        /* --- ANIMACIONES DE SOLES --- */
+        @keyframes rotate-rays {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .sun-rays {
+            animation: rotate-rays 20s linear infinite;
+            transform-origin: center;
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- NUBES EN MOVIMIENTO --- */
+        .cloud {
+            position: absolute;
+            fill: white;
+            opacity: 0.8;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            z-index: 1;
+        }
+        @keyframes move-clouds {
+            from { transform: translateX(-100vw); }
+            to { transform: translateX(100vw); }
+        }
+        .cloud-anim {
+            animation: move-clouds 30s linear infinite;
+        }
+
+        /* --- ESTILO DE TARJETA --- */
+        .card-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 4px solid white;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(255, 152, 0, 0.1);
+        }
+
+        /* --- BOTONES INTERACTIVOS --- */
+        .btn-predict {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-predict:hover { transform: scale(1.1) rotate(2deg); }
+        .btn-predict:active { transform: scale(0.95); }
+    </style>
 </head>
-<body class="watercolor-bg min-h-screen flex flex-col items-center justify-between overflow-x-hidden pb-12">
+<body class="min-h-screen relative overflow-x-hidden">
 
-  <main class="w-full max-w-lg mx-auto px-4 pt-16 pb-6 relative select-none">
-    
-    <div class="absolute top-6 left-0 right-0 h-10 pointer-events-none opacity-70 z-10
+    <div class="fixed inset-0 pointer-events-none">
+        <svg class="cloud cloud-anim" style="top: 10%; width: 200px; animation-duration: 40s;" viewBox="0 0 24 24"><path d="M17.5,19c-3.037,0-5.5-2.463-5.5-5.5c0-0.125,0.013-0.247,0.021-0.371C11.314,13.06,10.675,13,10,13c-2.761,0-5,2.239-5,5c0,2.761,2.239,5,5,5h7.5c2.485,0,4.5-2.015,4.5-4.5S19.985,14,17.5,14c-0.123,0-0.245,0.012-0.365,0.021C17.411,14.331,17.5,14.654,17.5,15C17.5,17.209,19.291,19,21.5,19c0.231,0,0.453-0.023,0.672-0.061C21.144,18.96,20.086,19,19,19H17.5z"></path></svg>
+        <svg class="cloud cloud-anim" style="top: 40%; width: 150px; animation-duration: 55s; animation-delay: -10s;" viewBox="0 0 24 24"><path d="M17.5,19c-3.037,0-5.5-2.463-5.5-5.5c0-0.125,0.013-0.247,0.021-0.371C11.314,13.06,10.675,13,10,13c-2.761,0-5,2.239-5,5c0,2.761,2.239,5,5,5h7.5c2.485,0,4.5-2.015,4.5-4.5S19.985,14,17.5,14c-0.123,0-0.245,0.012-0.365,0.021C17.411,14.331,17.5,14.654,17.5,15C17.5,17.209,19.291,19,21.5,19c0.231,0,0.453-0.023,0.672-0.061C21.144,18.96,20.086,19,19,19H17.5z"></path></svg>
+        <svg class="cloud cloud-anim" style="top: 70%; width: 250px; animation-duration: 45s; animation-delay: -5s;" viewBox="0 0 24 24"><path d="M17.5,19c-3.037,0-5.5-2.463-5.5-5.5c0-0.125,0.013-0.247,0.021-0.371C11.314,13.06,10.675,13,10,13c-2.761,0-5,2.239-5,5c0,2.761,2.239,5,5,5h7.5c2.485,0,4.5-2.015,4.5-4.5S19.985,14,17.5,14c-0.123,0-0.245,0.012-0.365,0.021C17.411,14.331,17.5,14.654,17.5,15C17.5,17.209,19.291,19,21.5,19c0.231,0,0.453-0.023,0.672-0.061C21.144,18.96,20.086,19,19,19H17.5z"></path></svg>
+    </div>
+
+    <svg class="hidden">
+        <symbol id="cute-sun" viewBox="0 0 100 100">
+            <g class="sun-rays">
+                <line x1="50" y1="10" x2="50" y2="20" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="50" y1="80" x2="50" y2="90" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="10" y1="50" x2="20" y2="50" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="80" y1="50" x2="90" y2="50" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="21" y1="21" x2="29" y2="29" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="71" y1="71" x2="79" y2="79" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="71" y1="21" x2="79" y2="29" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+                <line x1="21" y1="71" x2="29" y2="79" stroke="var(--orange)" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <circle cx="50" cy="50" r="25" fill="var(--yellow)" stroke="white" stroke-width="3"/>
+            <path d="M30 75 Q50 60 70 75" fill="white" opacity="0.4"/>
+        </symbol>
+    </svg>
+
+    <div class="fixed top-5 left-5 w-24 h-24 floating z-10"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+    <div class="fixed top-5 right-5 w-24 h-24 floating z-10" style="animation-delay: -1s;"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+    <div class="fixed top-1/2 -left-10 w-20 h-20 floating z-10" style="animation-delay: -2s;"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+    <div class="fixed top-1/2 -right-10 w-20 h-20 floating z-10" style="animation-delay: -0.5s;"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+    <div class="fixed bottom-5 left-5 w-24 h-24 floating z-10" style="animation-delay: -1.5s;"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+    <div class="fixed bottom-5 right-5 w-24 h-24 floating z-10" style="animation-delay: -2.5s;"><svg class="w-full h-full"><use href="#cute-sun"/></svg></div>
+
+    <main class="relative z-20 w-full max-w-lg mx-auto px-6 py-20">
+        
+        <div class="card-glass p-8 text-center space-y-6">
+            
+            <div class="flex justify-center -mt-12">
+                <svg viewBox="0 0 300 100" class="w-64 h-auto drop-shadow-sm">
+                    <path id="curvePath" d="M 40,80 Q 150,20 260,80" fill="none" />
+                    <text class="font-accent text-lg font-bold" fill="var(--text-brown)" letter-spacing="4">
+                        <textPath href="#curvePath" startOffset="50%" text-anchor="middle">
+                            AQUÍ VIENE EL
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+
+            <h1 class="text-7xl font-accent font-black text-orange-500 -mt-10 tracking-tight">SECRETO</h1>
+            <h2 class="text-4xl font-elegant italic text-amber-900 mt-2">Revelación de Sexo</h2>
+
+            <div class="flex items-center justify-center gap-3">
+                <div class="h-1 w-12 bg-orange-200 rounded-full"></div>
+                <i data-lucide="sparkles" class="text-orange-400 fill-orange-400 w-6 h-6 animate-pulse"></i>
+                <div class="h-1 w-12 bg-orange-200 rounded-full"></div>
+            </div>
+
+            <p class="text-lg font-medium text-amber-950/70 italic">
+                Acompáñanos a descubrir esta luz en nuestras vidas
+            </p>
+
+            <div class="bg-orange-100/50 rounded-3xl p-6 border-2 border-orange-200 shadow-inner">
+                <p class="text-xs uppercase font-bold tracking-widest text-orange-700 mb-4">¡Falta Muy Poco!</p>
+                <div class="flex justify-between items-center px-2">
+                    <div class="flex flex-col"><span id="days" class="text-3xl font-bold text-orange-600">00</span><span class="text-[10px] font-bold uppercase">Días</span></div>
+                    <span class="text-2xl font-bold text-orange-300">:</span>
+                    <div class="flex flex-col"><span id="hours" class="text-3xl font-bold text-orange-600">00</span><span class="text-[10px] font-bold uppercase">Horas</span></div>
+                    <span class="text-2xl font-bold text-orange-300">:</span>
+                    <div class="flex flex-col"><span id="mins" class="text-3xl font-bold text-orange-600">00</span><span class="text-[10px] font-bold uppercase">Min</span></div>
+                    <span class="text-2xl font-bold text-orange-300">:</span>
+                    <div class="flex flex-col"><span id="secs" class="text-3xl font-bold text-orange-600">00</span><span class="text-[10px] font-bold uppercase">Seg</span></div>
+                </div>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t-2 border-orange-50">
+                <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm">
+                    <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] font-black text-orange-600 uppercase">¿Cuándo?</p>
+                        <p class="font-bold text-lg">20 DE JUNIO, 2026</p>
+                        <p class="text-sm font-semibold text-amber-800">A las 3:30 de la tarde</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm">
+                    <div class="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-white shadow-lg">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] font-black text-amber-600 uppercase">¿Dónde?</p>
+                        <p class="font-bold text-lg">Sector La Sosa</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white/60 p-4 rounded-2xl shadow-sm">
+                    <div class="w-12 h-12 bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[10px] font-black text-orange-500 uppercase">Dress Code</p>
+                        <p class="font-bold text-lg">Colores Pastel</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-6">
+                <h3 class="text-sm font-black text-amber-900 uppercase mb-4 tracking-tighter">¿Qué crees que será?</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="setPrediction('Niño')" class="btn-predict bg-blue-50 border-4 border-blue-200 p-4 rounded-3xl group">
+                        <span class="text-4xl block mb-2">👦</span>
+                        <span class="text-xs font-bold text-blue-700">NIÑO</span>
+                        <span class="block text-[8px] mt-1 text-blue-500 font-bold">LLEVA PAÑALES</span>
+                    </button>
+                    <button onclick="setPrediction('Niña')" class="btn-predict bg-pink-50 border-4 border-pink-200 p-4 rounded-3xl group">
+                        <span class="text-4xl block mb-2">👧</span>
+                        <span class="text-xs font-bold text-pink-700">NIÑA</span>
+                        <span class="block text-[8px] mt-1 text-pink-500 font-bold">LLEVA TOALLAS</span>
+                    </button>
+                </div>
+            </div>
+
+            <button onclick="scrollToForm()" class="w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 text-white font-accent font-bold py-5 px-8 rounded-3xl shadow-xl hover:shadow-orange-200 transition-all transform active:scale-95 text-xl tracking-tighter">
+                ¡SI VOY! CONFIRMAR AQUÍ
+            </button>
+        </div>
+
+        <div id="form-container" class="mt-8 card-glass p-8 space-y-6 relative overflow-hidden">
+            <h3 class="text-2xl font-accent font-bold text-center">Datos de Asistencia</h3>
+            
+            <form id="mainForm" onsubmit="handleSend(event)" class="space-y-4">
+                <div>
+                    <label class="text-xs font-black text-orange-600 ml-2">TU NOMBRE</label>
+                    <input type="text" id="guestName" required placeholder="Nombre y Apellido" class="w-full p-4 rounded-2xl border-2 border-orange-100 bg-white/50 focus:border-orange-400 outline-none transition-all font-bold">
+                </div>
+
+                <div>
+                    <label class="text-xs font-black text-orange-600 ml-2">¿CUÁNTOS VAN CONTIGO?</label>
+                    <select id="guestCount" class="w-full p-4 rounded-2xl border-2 border-orange-100 bg-white/50 outline-none font-bold">
+                        <option value="1">Solo Yo (1)</option>
+                        <option value="2">Somos 2</option>
+                        <option value="3">Somos 3</option>
+                        <option value="4">Somos 4 o más</option>
+                    </select>
+                </div>
+
+                <input type="hidden" id="predictionInput" value="Aún no decido">
+
+                <button type="submit" class="w-full bg-amber-900 text-white font-accent font-bold py-4 rounded-2xl shadow-lg hover:bg-black transition-all">
+                    REGISTRAR EN MI LISTA
+                </button>
+            </form>
+
+            <div id="successView" class="hidden text-center py-6 space-y-4">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto animate-bounce">
+                    <i data-lucide="check" class="text-green-600 w-10 h-10"></i>
+                </div>
+                <h4 class="text-xl font-bold text-green-700">¡Todo Listo!</h4>
+                <p class="text-sm px-4">Serás redirigido a Google para registrar tu confirmación oficial. ¡Dale a <b>ENVIAR</b> en el formulario de Google!</p>
+                <button onclick="window.location.reload()" class="text-xs font-bold text-orange-600 underline">Volver a intentar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-10 opacity-40 text-[10px] font-black uppercase tracking-widest px-10">
+        Revelación de Sexo - Caracas 2026 - Rayitos de Sol y Amor
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // COUNTDOWN
+        const target = new Date("June 20, 2026 15:30:00").getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = target - now;
+            if (diff < 0) return;
+            document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('hours').innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('mins').innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('secs').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000); updateTimer();
+
+        function scrollToForm() { document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' }); }
+
+        function setPrediction(val) {
+            document.getElementById('predictionInput').value = val;
+            const colors = val === 'Niño' ? ['#60A5FA', '#93C5FD', '#FFFFFF'] : ['#F472B6', '#F9A8D4', '#FFFFFF'];
+            confetti({ particleCount: 50, spread: 60, colors: colors });
+            alert('¡Marcaste: ' + val + '! Ahora completa tus datos abajo.');
+            scrollToForm();
+        }
+
+        function handleSend(e) {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value;
+            const count = document.getElementById('guestCount').value;
+            const pred = document.getElementById('predictionInput').value;
+
+            // URL del Google Forms único del usuario
+            const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe8MYkM4fLHSa8i4IvIQ8VIYux2LREiCp_BnGVplwLsPUr6TA/viewform";
+            
+            // Construimos la URL mágica para Google con los datos pre-llenados
+            // Usamos parámetros universales para capturar los inputs
+            const prefilledUrl = `${baseUrl}?usp=pp_url&entry.123456789=${encodeURIComponent(name)}&entry.987654321=${encodeURIComponent(pred + ' - Van: ' + count)}`;
+
+            confetti({ particleCount: 200, spread: 90, origin: { y: 0.7 }, colors: ['#FFD54F', '#FF9800', '#FFFFFF'] });
+
+            document.getElementById('mainForm').classList.add('hidden');
+            document.getElementById('successView').classList.remove('hidden');
+
+            // Abrimos Google Forms en 2 segundos
+            setTimeout(() => {
+                window.open(prefilledUrl, '_blank');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
+```
